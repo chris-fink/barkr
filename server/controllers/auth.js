@@ -31,6 +31,7 @@ export const register = async (req, res) => {
       location,
       interestedPet,
       likedPets,
+      matches,
       adopt,
       foster,
       kids,
