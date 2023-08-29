@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import Pet from "../models/Pet.js";
 
 /* READ */
 export const getUser = async (req, res) => {
@@ -36,17 +37,17 @@ export const addRemoveMatch = async (req, res) => {
     try {
       const { id, matchId } = req.params;
       const user = await User.findById(id);
-      const match = await User.findById(matchId);
+      const pet = await Pet.findById(matchId);
   
       if (user.matches.includes(matchId)) {
         user.matches = user.matches.filter((id) => id !== matchId);
-        match.matches = match.matches.filter((id) => id !== id);
+        pet.matches = pet.matches.filter((id) => id !== id);
       } else {
         user.matches.push(matchId);
-        match.matches.push(id);
+        pet.matches.push(id);
       }
       await user.save();
-      await match.save();
+      await pet.save();
   
       const matches = await Promise.all(
         user.matches.map((id) => User.findById(id))
@@ -61,4 +62,4 @@ export const addRemoveMatch = async (req, res) => {
     } catch (err) {
       res.status(404).json({ message: err.message });
     }
-  };
+};
