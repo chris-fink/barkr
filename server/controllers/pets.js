@@ -12,7 +12,7 @@ export const getPet = async (req, res) => {
     }
 };
 
-export const getPetMatches = async (req, res) {
+export const getPetMatches = async (req, res) => {
     try {
         const { id } = req.params;
         const pet = await Pet.findById(id);

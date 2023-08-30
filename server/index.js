@@ -46,7 +46,6 @@ const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
-app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
@@ -65,7 +64,7 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD DATA ONE TIME */
-    // User.insertMany(users);
-    // Post.insertMany(posts);
+    //Pet.insertMany(pets);
+    //Agency.insertMany(agency);
   })
   .catch((error) => console.log(`${error} did not connect`));

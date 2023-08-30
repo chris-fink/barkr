@@ -4,7 +4,7 @@ import {
     getPet,
     updatePet,
     removePet
-} from "../controllers/pet.js";
+} from "../controllers/agency.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -12,7 +12,7 @@ const router = express.Router();
 /* READ */
 router.get("/:id", verifyToken, getAgency);
 router.get("/:id/pet", verifyToken, getPet);
-router.get("/:id/matches", verifyToken, getPetMatches);
+//router.get("/:id/matches", verifyToken, getPetMatches);
 
 /* UPDATE */
 router.patch("/:id/:petId/update", verifyToken, updatePet);

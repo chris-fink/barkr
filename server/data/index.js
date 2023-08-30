@@ -126,7 +126,7 @@ export const pets = [
         species: "puppy",
         age: "3 months",
         gender: "f",
-        breed: "Terrier, American StraffordShire/Mix,
+        breed: "Terrier, American StraffordShire/Mix",
         neutered: true,
         declawed: false,
         housetrained: false,
@@ -294,8 +294,7 @@ export const pets = [
         goodWithKids: "unknown",
         goodWithCats: "unknown",
         goodWithDogs: "unknown",
-	    description: "
-        I am available for adoption or healthy foster! I have already been examined by a GHS Veterinarian!",
+	    description: "I am available for adoption or healthy foster! I have already been examined by a GHS Veterinarian!",
         __v: 0,
     },
     {
@@ -704,11 +703,13 @@ const agencyIds =[
     new mongoose.Types.ObjectId(),
 ];
 
-export const agency [
+export const agency = [
     {
         _id: agencyIds[0],
         name: "Greenville Humane Society",
         location: "Greenville, SC",
+        email: "pets@GHS.gov",
+        password: "pets1",
         picturePath: "GHS.JPG",
         __v: 0,
     }

@@ -18,7 +18,7 @@ const PetSchema = new mongoose.Schema(
       default: "",
     },
     species: String,
-    age: Number,
+    age: String,
     gender: String,
     breed: String,
     neutered: {
@@ -28,17 +28,17 @@ const PetSchema = new mongoose.Schema(
         type: Boolean,
     },
     houseTrained: {
-        type: Boolean,
+        type: String,
     },
     adoptionPrice: Number,
     goodWithkids: {
-        type: Boolean,
+        type: String,
     },
     goodWithCats: {
-        type: Boolean,
+        type: String,
     },
     goodWithDogs: {
-        type: Boolean,
+        type: String,
     },
     matches: {
         type: Array,
