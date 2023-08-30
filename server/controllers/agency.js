@@ -25,7 +25,7 @@ export const getAgency = async (req, res) => {
     try {
         const { id } = req.params;
         const agency = await Agency.findById(id);
-        res.status(200).json(user);
+        res.status(200).json(agency);
     } catch (err) {
         res.status(404).json({ message: err.message });
     }
