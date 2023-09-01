@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
+import chatRoutes from "./routes/chat.js";
 import userRoutes from "./routes/users.js";
 import petRoutes from "./routes/pet.js";
 import agencyRoutes from "./routes/agency.js";
@@ -52,6 +53,8 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/agency", agencyRoutes);
 app.use("/pet", petRoutes);
+app.use('/api/chat', chatRoutes); // Use '/api/chat' as the prefix for chat-related routes
+
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
